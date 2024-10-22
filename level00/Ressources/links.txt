@@ -1,0 +1,8 @@
+Decompiler :
+	- https://dogbolt.org/
+
+gdb Documentation :
+	- https://sourceware.org/gdb/documentation/
+
+Assembly sheet for instructions :
+	- https://cs.brown.edu/courses/cs033/docs/guides/x64_cheatsheet.pdf
