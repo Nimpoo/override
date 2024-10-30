@@ -1,0 +1,2 @@
+Debugging Forks with gdb :
+	- https://sourceware.org/gdb/current/onlinedocs/gdb.html/Forks.html
