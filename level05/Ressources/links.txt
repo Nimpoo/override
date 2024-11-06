@@ -1,0 +1,12 @@
+Shellcode :
+	- https://shell-storm.org/shellcode/files/shellcode-827.html
+
+NOP Instruction in Assembly :
+	- https://www.gladir.com/LEXIQUE/ASM/nop.htm
+
+NOP sled :
+	- https://en.wikipedia.org/wiki/NOP_slide
+	- https://unprotect.it/technique/nop-sled/
+
+Overwrite an address with a too big deciamal number :
+	- https://axcheron.github.io/exploit-101-format-strings/
