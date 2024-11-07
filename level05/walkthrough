@@ -26,6 +26,8 @@ Okay it seems that the program is converting the input to lowercase. Let's check
 
 - Let's speedrun this level by using the `printf` format string vulnerability. We are going to overwrite the `exit@got.plt` function address with the address of a `shellcode` that will spawn a shell.
 
+# <u>Vulnerabilit**ies**</u> : `GOT overwriting` by `Format String Attack` helped by a `Shellcode`
+
 > It's a mix of the [`Format String Attack` (level3 from _RainFall_)](https://github.com/Nimpoo/rainfall/blob/main/level3/walkthrough.md), the [`GOT OverRide` (level5 from _RainFall_)](https://github.com/Nimpoo/rainfall/blob/5b273638bacb4d48582e8678d3da764df7e804df/level5/walkthrough.md) and using a shellcode.
 
 ## 1. Finding the padding
