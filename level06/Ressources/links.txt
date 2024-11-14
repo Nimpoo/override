@@ -1,0 +1,2 @@
+The GDB's command "jump" :
+	- https://sourceware.org/gdb/current/onlinedocs/gdb.html/Jumping.html#Jumping
