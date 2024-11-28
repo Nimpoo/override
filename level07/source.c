@@ -1,134 +1,115 @@
+#include <stdbool.h>
 #include <stdio.h>
-#include <stdlib.h>
 
 int clear_stdin()
 {
-  int result;
+	int result;
 
-  do
-    result = getchar();
-  while ( (char)result != 10 && (char)result != 0xFF );
-  return result;
+	do
+		result = getchar();
+	while ((unsigned char)result != 10 && (unsigned char)result != 0xFF);
+
+	return result;
 }
 
 int get_unum()
 {
-  int v1[3];
+	int number;
 
-  v1[0] = 0;
-  fflush(stdout);
-  scanf("%d", v1);
-  clear_stdin();
-  return v1[0];
+	fflush(stdout);
+	scanf("%d", &number);
+	clear_stdin();
+	return number;
 }
 
-void prog_timeout()
+int store_number(int *a1)
 {
-  int v0;
+	unsigned int number, index;
 
-  exit(1);
+	printf(" Number: ");
+	number = get_unum();
+	printf(" Index: ");
+	index = get_unum();
+
+	if (index == 3 * (index / 3) || HIBYTE(number) == 183) {
+		puts(" *** ERROR! ***");
+		puts("   This index is reserved for wil!");
+		puts(" *** ERROR! ***");
+		return 1;
+	}
+
+	else {
+		a1[index] = number;
+		return 0;
+	}
 }
 
-int store_number(int a1)
+int read_number(int *a1)
 {
-  unsigned int unum;
-  unsigned int v3;
+	int unum;
 
-  printf(" Number: ");
-  unum = get_unum();
-  printf(" Index: ");
-  v3 = get_unum();
-  if ( v3 == 3 * (v3 / 3))
-  {
-    puts(" *** ERROR! ***");
-    puts("   This index is reserved for wil!");
-    puts(" *** ERROR! ***");
-    return 1;
-  }
-  else
-  {
-    *(int *)(a1 + 4 * v3) = unum;
-    return 0;
-  }
-}
+	printf(" Index: ");
+	unum = get_unum();
+	printf(" Number at data[%u] is %u\n", unum, a1[4 * unum]);
 
-int read_number(int a1)
-{
-  int unum;
-
-  printf(" Index: ");
-  unum = get_unum();
-  printf(" Number at data[%u] is %u\n", unum, *(int *)(a1 + 4 * unum));
-  return 0;
+	return 0;
 }
 
 int main(int argc, const char **argv, const char **envp)
 {
-  int v6[100];
-  int number;
-  char s[4];
-  int v9;
-  int v10;
-  int v11;
-  int v12;
-  unsigned int v13;
+	unsigned char v6[400];
+	int number;
+	char s[20];
+	unsigned int v13;
 
-  v13 = __readgsdword(0x14u);
-  number = 0;
-  *(int *)s = 0;
-  v9 = 0;
-  v10 = 0;
-  v11 = 0;
-  v12 = 0;
-  memset(v6, 0, sizeof(v6));
-  while ( *argv )
-  {
-    memset((void *)*argv, 0, strlen(*argv));
-    ++argv;
-  }
-  while ( *envp )
-  {
-    memset((void *)*envp, 0, strlen(*envp));
-    ++envp;
-  }
-  puts(
-    "----------------------------------------------------\n"
-    "  Welcome to wil's crappy number storage service!   \n"
-    "----------------------------------------------------\n"
-    " Commands:                                          \n"
-    "    store - store a number into the data storage    \n"
-    "    read  - read a number from the data storage     \n"
-    "    quit  - exit the program                        \n"
-    "----------------------------------------------------\n"
-    "   wil has reserved some storage :>                 \n"
-    "----------------------------------------------------\n");
-  while ( 1 )
-  {
-    printf("Input command: ");
-    number = 1;
-    fgets(s, 20, stdin);
-    s[strlen(s) - 1] = 0;
-    if ( !memcmp(s, "store", 5u) )
-    {
-      number = store_number((int)v6);
-      goto LABEL_13;
-    }
-    if ( !memcmp(s, "read", 4u) )
-    {
-      number = read_number((int)v6);
-      goto LABEL_13;
-    }
-    if ( !memcmp(s, "quit", 4u) )
-      return 0;
-LABEL_13:
-    if ( number )
-      printf(" Failed to do %s command\n", s);
-    else
-      printf(" Completed %s command successfully\n", s);
-    *(int *)s = 0;
-    v9 = 0;
-    v10 = 0;
-    v11 = 0;
-    v12 = 0;
-  }
+	v13 = __readgsdword(0x14u);
+	number = 0;
+	bzero(s, 20);
+	memset(v6, 0, sizeof(v6));
+
+	while (*argv) {
+		memset((void *)*argv, 0, strlen(*argv));
+		++argv;
+	}
+
+	while (*envp) {
+		memset((void *)*envp, 0, strlen(*envp));
+		++envp;
+	}
+
+	puts(
+		"----------------------------------------------------\n"
+		"  Welcome to wil's crappy number storage service!   \n"
+		"----------------------------------------------------\n"
+		" Commands:                                          \n"
+		"    store - store a number into the data storage    \n"
+		"    read  - read a number from the data storage     \n"
+		"    quit  - exit the program                        \n"
+		"----------------------------------------------------\n"
+		"   wil has reserved some storage :>                 \n"
+		"----------------------------------------------------\n"
+	);
+
+	while (true) {
+		printf("Input command: ");
+		number = 1;
+		fgets(s, 20, stdin);
+		s[strlen(s) - 1] = 0;
+
+		if (!memcmp(s, "store", 5u))
+			number = store_number(v6);
+
+		else if (!memcmp(s, "read", 4u))
+			number = read_number(v6);
+
+		else if (!memcmp(s, "quit", 4u))
+			return 0;
+
+		if (number)
+			printf(" Failed to do %s command\n", s);
+		else
+			printf(" Completed %s command successfully\n", s);
+
+		bzero(s, 20);
+	}
 }
