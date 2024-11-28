@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 	puts("***** NEW ACCOUNT DETECTED ********");
 	puts("***********************************");
 	printf("-> Enter Serial: ");
-	__isoc99_scanf(&unk_8048A60, &v4);
+	scanf("%d", &v4);
 	if (auth(s, v4))
 		return 1;
 	puts("Authenticated!");

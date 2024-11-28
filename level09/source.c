@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stddef.h>
+#include <inttypes.h>
 #include <string.h>
 
 char *set_msg(int64_t a1);
