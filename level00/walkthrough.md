@@ -22,7 +22,7 @@ Invalid Password!
 level00@OverRide:~$ 
 ```
 
-Before decompiling the binary, we can try to make it without de source code for more challenge (you can see the [source code in the `source` file](source) and the [decompiled file by `hex-rays`](Ressources/binary_00-hex-rays.png) in the `Ressources` folder). :
+Before decompiling the binary, we can try to make it without de source code for more challenge (you can see the [source code in the `source` file](source.c) and the [decompiled file by `hex-rays`](Ressources/binary_00-hex-rays.png) in the `Ressources` folder). :
 
 ```sh
 (gdb) disass main
