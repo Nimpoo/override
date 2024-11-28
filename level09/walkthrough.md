@@ -16,7 +16,7 @@ level09@OverRide:~$ ./level09
 level09@OverRide:~$
 ```
 
-Let's see the [source code](source):
+Let's see the [source code](source.c):
 
 - The `main` function calls `handle_msg` only.
 
