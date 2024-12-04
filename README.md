@@ -51,7 +51,7 @@ I use `scp` for the file transfer :
 - [`level04`](level04/README.md) : **Stack-Based Buffer Overflow** and **Process Manipulation** - `Ret2libc` and `gdb` (`follow-fork-mode`)
 - [`level05`](level05/README.md) : **Format String Attack** - `GOT` overwriting by `shellcode` injection + `printf` limitation (**`high`/`low` order bytes**)
 - [`level06`](level06/README.md) : **Binary recration** or **Code Skipping** - Easy serial number bypass or **overriding** security checks with `gdb` (`jump` command)
-- [`level07`](level07/README.md) : **Integer Overflow** - `Ret2Libc`
+- [`level07`](level07/README.md) : **Stack-Based Buffer Overflow** and **Integer Overflow** - `Ret2Libc`
 - [`level08`](level08/README.md) : **Reverse Engineering (only)** - file managing manipulation
 
 ## BONUS - `level09` :
