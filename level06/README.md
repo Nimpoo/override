@@ -1,9 +1,5 @@
 # level06
 
-# [The truth about Eustass Kid](https://www.reddit.com/r/OnePiece/comments/snqj6r/why_a_lot_of_people_strongly_dislike_kidd/)
-
-![Une fraude](../assets/eustass_kid_la_fraude.gif)
-
 ![level06](Ressources/title_screen06.png)
 
 ```sh

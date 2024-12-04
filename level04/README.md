@@ -2,8 +2,6 @@
 
 ![title screen](Ressources/title_screen04.png)
 
-# [KAMUSARI](https://www.youtube.com/watch?v=qmAHP90yhQs)
-
 ```sh
 level04@OverRide:~$ ./level04
 Give me some shellcode, k

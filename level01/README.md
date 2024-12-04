@@ -2,9 +2,6 @@
 
 ![level01](Ressources/title_screen01.png)
 
-# [Music to listen when you are demotivated](https://www.youtube.com/watch?v=GrQN-zcuPEU)
-![Uta](../assets/Uta.gif)
-
 ```sh
 level01@OverRide:~$ ./level01
 ********* ADMIN LOGIN PROMPT *********

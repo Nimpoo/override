@@ -2,8 +2,6 @@
 
 ![title screen](Ressources/title_screen03.png)
 
-# Mihawk >>>>>>>>>>> Vista (wtf is this debat ?)
-
 ```sh
 level03@OverRide:~$ ./level03
 ***********************************

@@ -56,11 +56,7 @@ I use `scp` for the file transfer :
 
 ## BONUS - `level09` :
 
-- [`level09`](level09/README.md) : **Stack-Based Buffer Overflow** - `Ret2win` by exploiting **ONLY 1 (ONE) BYTE**
-
-<br />
-
-![Monkey D. Garp](assets/Garp.gif)
+- [`level09`](level09/README.md) : **Stack-Based Buffer Overflow** - `Ret2win` by exploiting **1 byte**
 
 <br />
 

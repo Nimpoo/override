@@ -2,8 +2,6 @@
 
 ![title screen](Ressources/title_screen02.png)
 
-# [OUR NEW ERA](https://youtu.be/GrQN-zcuPEU?si=pE0aYGj6Z8_r6lcM)
-
 ```sh
 level02@OverRide:~$ ./level02
 ===== [ Secure Access System v1.0 ] =====
