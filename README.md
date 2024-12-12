@@ -60,7 +60,7 @@ I use `scp` for the file transfer :
 
 <br />
 
-## MADE BY TWO REAL BRO :
+## MADE BY TWO REAL BROS :
 
 <table>
   <tr>
